@@ -16,7 +16,12 @@
 	font-weight: 100;
 }
 
-
+@font-face{
+	font-family:'gidole';
+	src: url(fonts/Gidole.otf);
+	font-style: normal;
+	font-weight: 100;
+}
 body {
 	/*sets the background of the body image to background.jpg in the img folder */
 	background-image: url(img/background.jpg);
@@ -98,21 +103,22 @@ nav ul li ul li {
 
 /*general font and padding stuff for paragraphs and headers*/
 h1 {
-	font-family: azonix;
+	font-family: gidole;
 	color: black;
 	font-size: 300%;
 	font-weight: lighter;
 	
 }
 h2 {
-	font-family: verdana;
+	font-family: gidole;
 	color: black;
 	font-size: 200%;
 	font-weight: lighter;
 	padding-top: 40px;
+	
 }
 p {
-	font-family: verdana;
+	font-family: gidole;
 	color:  black;
 	font-size: 150%;
 	padding-top: 20px;
@@ -144,18 +150,19 @@ p {
 
 /*uses the ID attribute to create the logo element on the top left of the page with the cool font*/
 #logo{
-	font-family: azonix;
+	font-family: gidole;
 	color: black;
 	font-size: 40px;
 	line-height: 55px;
 	float: left;
 	padding: 20px 20px;
+	font-weight: lighter;
 }
 
 
 /*creates a footer id attribute*/
 #footer{
-	font-family: verdana;
+	font-family: gidole;
 	color: #a4a4a4;
 	font-size: 20px;
 	text-decoration: none;
@@ -173,35 +180,23 @@ footer{
 }
 
 
-/*css for radio buttons and text boxes*/
-#question1{
-	background: rgba(0,0,0,0.5); 
-	font-family: arial;
-	color: rgba(255,255,255,0.9);
-	font-weight: bold;
-	font-size: 20px;
-	padding: 3px;
-	border-color: rgba(255,255,255,0.1);
-}
-/*change placeholder text color to white*/
-::placeholder{
-	color: rgba(255,255,255,0.9);
-}
+
 /*css for radio buttons and text boxes*/
 .questions{
-	font-family: arial;
+	
 	border: none;
 	padding: 0;
 	color: rgb(0, 0, 0);
-	font-weight: bold;
+	font-family: gidole;
+	
 	font-size: 20px;
 /*css for radio buttons and text boxes*/
 }
 .quizButtons{
 	background: rgba(255, 255, 255, 0.5); 
-	font-family: arial;
+	font-family: gidole;
 	color: rgb(0, 0, 0);
-	font-weight: bold;
+	
 	font-size: 20px;
 	padding: 7px;
 	border-color: rgba(255,255,255,0.1);
