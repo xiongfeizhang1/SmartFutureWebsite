@@ -1,0 +1,212 @@
+/*removes padding and margin*/
+*{
+	/*removes all margin and padding*/
+	margin: 0;
+	padding: 0;
+
+	/*hides scrollbar*/
+	scrollbar-width: none;
+}
+
+/*adds the azonix font*/
+@font-face{
+	font-family:'azonix';
+	src: url(fonts/Azonix.otf);
+	font-style: normal;
+	font-weight: 100;
+}
+
+
+body {
+	/*sets the background of the body image to background.jpg in the img folder */
+	background-image: url(img/background.jpg);
+	/* changes dimensions of background to fit screen */
+	background-size: cover;
+	background-attachment: fixed;
+	
+}
+
+/* sets dimensions of the navigation icon bar */
+nav{
+	position:fixed;
+	width:100%;
+	height: 60px;
+	z-index: 1000;
+
+}
+
+/* sets position of the icon of the drop down menu to the right side */
+nav ul{
+	float: right;
+	/*hides bullet point*/
+	list-style: none;
+	padding-right: 12px;
+
+}
+
+
+/*dimensions of the drop down menu*/
+nav ul li a{
+	display: block;
+	font-family: verdana;
+	color: black;
+	font-size: 20px;
+	padding: 22px 14px 10px 14px;
+	/*removes the underline from links*/
+	text-decoration: none;
+
+
+}
+
+nav ul li ul {
+	/* this hides the drop down menu when your mouse is not over it */
+	display: none;
+	/* icon position wont change when the drop down menu appears */
+	position: absolute;
+	right: 0px;
+	background-color: rgb(33, 199, 211);
+	padding: 20px;
+	/*hides bullet point*/
+	list-style: none;
+	/* rounded edges for corners */
+	border-radius: 5px 5px 5px 5px;
+
+	
+
+}
+/* this shows the drop down when your mouse goes over the icon */
+nav ul li:hover ul {
+	display: block;
+	
+}
+
+nav ul li ul li a {
+	padding: 12px 0px;
+}
+
+/* changes the background color of the text being hovered over */
+nav ul li ul li a:hover {
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 12px 0px;
+	opacity: 0.7;
+
+}
+/*changes the width of the drop down box to fit*/
+nav ul li ul li {
+	width: 180px;
+}
+
+/*general font and padding stuff for paragraphs and headers*/
+h1 {
+	font-family: azonix;
+	color: black;
+	font-size: 300%;
+	font-weight: lighter;
+	
+}
+h2 {
+	font-family: verdana;
+	color: black;
+	font-size: 200%;
+	font-weight: lighter;
+	padding-top: 40px;
+}
+p {
+	font-family: verdana;
+	color:  black;
+	font-size: 150%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-weight: lighter;
+}
+
+.fa-bars{
+	color: black;
+}
+
+
+/* attributes for the column class to show only on the right side of the screen*/
+.row .column {
+	padding-top: 140px;
+	padding-bottom: 40px;
+	float: right;
+	width: 40%;
+	
+}
+
+.row{
+	padding-top: 140px;
+	padding-bottom: 40px;
+	float: right;
+	width: 80%;
+}
+
+
+/*uses the ID attribute to create the logo element on the top left of the page with the cool font*/
+#logo{
+	font-family: azonix;
+	color: black;
+	font-size: 40px;
+	line-height: 55px;
+	float: left;
+	padding: 20px 20px;
+}
+
+
+/*creates a footer id attribute*/
+#footer{
+	font-family: verdana;
+	color: #a4a4a4;
+	font-size: 20px;
+	text-decoration: none;
+	padding: 7px;
+}
+/*uses the footer tag to create a footer box at the bottom left of the screen*/
+footer{
+
+	bottom: 0px;
+	background-color: black;
+	opacity: .7;
+	text-decoration: none;
+	/*so footer stays at bottom*/
+	position: fixed;
+}
+
+
+/*css for radio buttons and text boxes*/
+#question1{
+	background: rgba(0,0,0,0.5); 
+	font-family: arial;
+	color: rgba(255,255,255,0.9);
+	font-weight: bold;
+	font-size: 20px;
+	padding: 3px;
+	border-color: rgba(255,255,255,0.1);
+}
+/*change placeholder text color to white*/
+::placeholder{
+	color: rgba(255,255,255,0.9);
+}
+/*css for radio buttons and text boxes*/
+.questions{
+	font-family: arial;
+	border: none;
+	padding: 0;
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+	font-size: 20px;
+/*css for radio buttons and text boxes*/
+}
+.quizButtons{
+	background: rgba(255, 255, 255, 0.5); 
+	font-family: arial;
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+	font-size: 20px;
+	padding: 7px;
+	border-color: rgba(255,255,255,0.1);
+}
+
+input[type="radio"]{
+	margin: 0 10px 0 10px;
+  }
