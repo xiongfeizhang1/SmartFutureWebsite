@@ -17,8 +17,6 @@
 		<script src="javascripts.js"></script>	
 	</head>
 	<body>
-		<!-- trapezoid class for the css background -->
-		<!-- <div class="trapezoid"></div> -->
 		<nav>
 			<!-- uses the logo id to create the logo on the top left of the page -->
 			<h1 id="logo">SmartFuture</h1>
@@ -40,56 +38,96 @@
 			<div class= "row">
 				
 				<h1>Career Assessment</h1>
+				<div id = "listQuestions">	
+					
+					<h2>1) I enjoy large social events.</h2>
+					<div id="Q1" class="questions">
+						<!-- radio buttons for multiple choice, same group so they cant select more than one -->
+						<input id="q1a" name="question1" type="radio" value="Disagree">Disagree</input>
+						
+						<input id="q1b" name="question1" type="radio" value="Somewhat Disagree">Somewhat Disagree</input>
+						
+						<input id="q1c" name="question1" type="radio" value="Neutral">Neutral</input>
+						
+						<input id="q1d" name="question1" type="radio" value="Somewhat Agree">Somewhat Agree</input>
+						
+						<input id="q1e" name="question1" type="radio" value="Agree">Agree</input>
+						<br>
+					</div>
+					<img src = "img/gathering.jpg" width="500">
+					
+					<h2>2) I like learning new things.</h2>
+					<div id="Q2" class="questions">
+						<!-- radio buttons for multiple choice, same group so they cant select more than one -->
+						<input id="q2a" name="question2" type="radio" value="Disagree">Disagree</input>
+						
+						<input id="q2b" name="question2" type="radio" value="Somewhat Disagree">Somewhat Disagree</input>
+						
+						<input id="q2c" name="question2" type="radio" value="Neutral">Neutral</input>
+						
+						<input id="q2d" name="question2" type="radio" value="Somewhat Agree">Somewhat Agree</input>
+						
+						<input id="q2e" name="question2" type="radio" value="Agree">Agree</input>
+						<br>
+					</div>
+					<img src = "img/learning.jpg" width="500">
 
 
-				<h2>(Example Question 1) How much do you enjoy problem solving?</h2>
-				<div id="Q1" class="questions">
-					<!-- radio buttons for multiple choice, same group so they cant select more than one -->
-					<input id="q1a" name="question1" type="radio" value="Dislike">Dislike</input>
-					
-					<input id="q1b" name="question1" type="radio" value="Somewhat Dislike">Somewhat Dislike</input>
-					
-					<input id="q1c" name="question1" type="radio" value="Neutral">Neutral</input>
-					
-					<input id="q1d" name="question1" type="radio" value="Somewhat Like">Somewhat Like</input>
-					
-					<input id="q1e" name="question1" type="radio" value="Like">Like</input>
+					<h2>3) I like to travel.</h2>
+					<div id="Q3" class="questions">
+						<!-- radio buttons for multiple choice, same group so they cant select more than one -->
+						<input id="q3a" name="question3" type="radio" value="Disagree">Disagree</input>
+						
+						<input id="q3b" name="question3" type="radio" value="Somewhat Disagree">Somewhat Disagree</input>
+						
+						<input id="q3c" name="question3" type="radio" value="Neutral">Neutral</input>
+						
+						<input id="q3d" name="question3" type="radio" value="Somewhat Agree">Somewhat Agree</input>
+						
+						<input id="q3e" name="question3" type="radio" value="Agree">Agree</input>
+						<br>
+						
+					</div>
+					<img src = "img/travel.jpg" width="500">
+
+
+					<h2>4) I plan out my day.</h2>
+					<div id="Q4" class="questions">
+						<!-- radio buttons for multiple choice, same group so they cant select more than one -->
+						<input id="q4a" name="question4" type="radio" value="Disagree">Disagree</input>
+						
+						<input id="q4b" name="question4" type="radio" value="Somewhat Disagree">Somewhat Disagree</input>
+						
+						<input id="q4c" name="question4" type="radio" value="Neutral">Neutral</input>
+						
+						<input id="q4d" name="question4" type="radio" value="Somewhat Agree">Somewhat Agree</input>
+						
+						<input id="q4e" name="question4" type="radio" value="Agree">Agree</input>
+						<br>
+					</div>
+					<img src = "img/plan.jpg" width="500">
+
+					<h2>5) I have a process for every task I do.</h2>
+					<div id="Q5" class="questions">
+						<!-- radio buttons for multiple choice, same group so they cant select more than one -->
+						<input id="q5a" name="question5" type="radio" value="Disagree">Disagree</input>
+						
+						<input id="q5b" name="question5" type="radio" value="Somewhat Disagree">Somewhat Disagree</input>
+						
+						<input id="q5c" name="question5" type="radio" value="Neutral">Neutral</input>
+						
+						<input id="q5d" name="question5" type="radio" value="Somewhat Agree">Somewhat Agree</input>
+						
+						<input id="q5e" name="question5" type="radio" value="Agree">Agree</input>
+						<br>
+					</div>
+					<img src = "img/flowchart.jpg" width="500">
+					<br>
+					<!-- button that runs the grade function to see whether answers matches correct -->
+					<button onclick="grade()" class= "quizButtons">Submit Answers</button>
+					<br>
 					<br>
 				</div>
-				
-				<h2>(Example Question 2) How much do you like working with others?</h2>
-				<div id="Q2" class="questions">
-					<!-- radio buttons for multiple choice, same group so they cant select more than one -->
-					<input id="q2a" name="question2" type="radio" value="Dislike">Dislike</input>
-					
-					<input id="q2b" name="question2" type="radio" value="Somewhat Dislike">Somewhat Dislike</input>
-					
-					<input id="q2c" name="question2" type="radio" value="Neutral">Neutral</input>
-					
-					<input id="q2d" name="question2" type="radio" value="Somewhat Like">Somewhat Like</input>
-					
-					<input id="q2e" name="question2" type="radio" value="Like">Like</input>
-					<br>
-				</div>
-				<h2>(Example Question 3) Do you like working with theory?</h2>
-				<div id="Q3" class="questions">
-					<!-- radio buttons for multiple choice, same group so they cant select more than one -->
-					<input id="q3a" name="question3" type="radio" value="Dislike">Dislike</input>
-					
-					<input id="q3b" name="question3" type="radio" value="Somewhat Dislike">Somewhat Dislike</input>
-					
-					<input id="q3c" name="question3" type="radio" value="Neutral">Neutral</input>
-					
-					<input id="q3d" name="question3" type="radio" value="Somewhat Like">Somewhat Like</input>
-					
-					<input id="q3e" name="question3" type="radio" value="Like">Like</input>
-					<br>
-				</div>
-				<br>
-				<!-- button that runs the grade function to see whether answers matches correct -->
-				<button onclick="grade()" class= "quizButtons">Submit Answers</button>
-				<br>
-				<br>
 				<div>
 					<h2 id = "resultsTitle">
 
