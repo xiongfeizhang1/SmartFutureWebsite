@@ -218,7 +218,6 @@ function calculateBestCareer(  inductiveV, abstractV, logicalV){
 		logicalDifference = Math.abs(logicalV - careerList[i].logicalValue);
 		totalDifference = abstractDifference + inductiveDifference + logicalDifference;
 
-
 		if(leastDifferenceValue > totalDifference){
 			leastDifferenceValue = totalDifference;
 			bestCareer = careerList[i];	
@@ -285,7 +284,7 @@ var teacher = {
 	careerName		: "Teacher",
 	inductiveValue	: 35,
 	abstractValue	: 15,
-	logicalValue	: 55,
+	logicalValue	: 50,
 	imageLink: 'img/teacher.jpg',
 	description: "Teachers are leaders who specialize in communicating hard topics to students in an easy to understand way by using examples. They must also be good listeners to understand the problems or requests students might have."	 
 };
