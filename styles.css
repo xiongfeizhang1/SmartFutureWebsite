@@ -3,7 +3,7 @@
 	/*removes all margin and padding*/
 	margin: 0;
 	padding: 0;
-
+	text-decoration: none;
 	/*hides scrollbar*/
 	scrollbar-width: none;
 }
@@ -143,6 +143,7 @@ p {
 .row{
 	padding-top: 140px;
 	padding-bottom: 40px;
+	padding-right:200px;
 	float: right;
 	width: 80%;
 }
@@ -197,7 +198,7 @@ footer{
 /*css for radio buttons and text boxes*/
 }
 .quizButtons{
-	background: rgba(255, 255, 255, 0.5); 
+	background-color: rgb(29, 123, 206, 0.5);
 	font-family: gidole;
 	color: rgb(0, 0, 0);
 	
@@ -213,4 +214,16 @@ input[type="radio"]{
 
 #resultsCareer{
 	font-size: 50px;
+}
+
+.redirect{
+	text-decoration:none;
+	list-style-type: none;
+	text-decoration: none;
+	background-color: rgb(29, 123, 206, 0.5);
+	font-family: gidole;
+	color: rgb(0, 0, 0);
+	font-size: 30px;
+	padding: 7px;
+	border-color: rgba(255,255,255,0.1);
 }

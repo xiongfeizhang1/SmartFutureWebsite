@@ -230,6 +230,10 @@ function calculateBestCareer(  inductiveV, abstractV, logicalV){
 	return bestCareer;
 } 
 
+function redirectTest(){
+	window.location.href = "/assessment.html";
+}
+
 
 
 /*
