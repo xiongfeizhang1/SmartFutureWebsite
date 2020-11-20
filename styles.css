@@ -160,6 +160,8 @@ p {
 }
 
 
+
+
 /*creates a footer id attribute*/
 #footer{
 	font-family: gidole;
@@ -178,7 +180,6 @@ footer{
 	/*so footer stays at bottom*/
 	position: fixed;
 }
-
 
 
 /*css for radio buttons and text boxes*/
@@ -205,3 +206,8 @@ footer{
 input[type="radio"]{
 	margin: 0 10px 0 10px;
   }
+
+
+#resultsCareer{
+	font-size: 50px;
+}

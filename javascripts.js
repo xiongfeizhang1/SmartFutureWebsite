@@ -9,15 +9,15 @@ var logicalValue = 0;
 //functions that add values to inductive, abstract, and logical
 function addInductive( amount)
 {
-	inductiveValue = inductiveValue + amount;
+	inductiveValue += amount;
 }
 function addAbstract( amount)
 {
-	abstractValue = abstractValue + amount;
+	abstractValue += amount;
 }
 function addLogical( amount)
 {
-	logicalValue = logicalValue + amount;
+	logicalValue +=  amount;
 }
 
 
@@ -85,15 +85,22 @@ function grade3(){
 
 //grade function that runs all the others and outputs response
 function grade(){
+	//adds up all user result values
 	grade1();
 	grade2();
 	grade3();
+	
+	//finds best career
+	var bestCareer = calculateBestCareer(inductiveValue, abstractValue, logicalValue);
 
-	//temp pop up 
+	//display career name and photo
+	document.getElementById("resultsTitle").innerHTML = "You seem fit to become a : ";
+	document.getElementById("resultsCareer").innerHTML = bestCareer.careerName;
+	document.getElementsByClassName("quizButtons")[0].style.visibility = 'hidden';
+	document.getElementById("careerDescription").innerHTML = bestCareer.description;
 
-	alert("induct: " + inductiveValue + "\nabstract: " + abstractValue + "\nlogical: " + logicalValue + "\nResult: " + calculateBestCareer( inductiveValue, abstractValue, logicalValue));
+	document.careerImage.src= bestCareer.imageLink;
 }
-
 
 
 function calculateBestCareer(  inductiveV, abstractV, logicalV){
@@ -110,8 +117,10 @@ function calculateBestCareer(  inductiveV, abstractV, logicalV){
 	//set leastDifferenceValue to a high number
 	leastDifferenceValue = 10000;
 
-	//for loop to go through the entire list of 
-	for( var i = 0; i < careerList.size; i++){
+
+	//for loop to go through the entire list of careers
+
+	for( var i = 0; i < careerList.length; i++){
 		inductiveDifference = Math.abs(inductiveV - careerList[i].inductiveValue); 
 		abstractDifference = Math.abs(abstractV - careerList[i].abstractValue);
 		logicalDifference = Math.abs(logicalV - careerList[i].logicalValue);
@@ -120,23 +129,16 @@ function calculateBestCareer(  inductiveV, abstractV, logicalV){
 
 		if(leastDifferenceValue > totalDifference){
 			leastDifferenceValue = totalDifference;
-			bestCareer = careerList[i].careerName;
-			//alert("inside if statement " + bestCareer + "\n totalDifference " + totalDifference);
-			
+			bestCareer = careerList[i];	
 		}
 	}
+	inductiveValue = 0;
+	abstractValue = 0;
+ 	logicalValue = 0;
 	return bestCareer;
 } 
 
 
-/*
-var career = {
-	name: "name",
-	inductiveValue: 0,
-	abstractValue: 0,
-	logicalValue: 0,
-}
-*/
 
 /*
 Cognitive Abilities influence the acquisition and application of knowledge in problem solving.
@@ -145,54 +147,68 @@ Psychomotor Abilities influence the capacity to manipulate and control objects
 Sensory Abilities influence visual, auditory and speech perception.
 */
 
+
 var mechanic = {
 	careerName		: "Mechanic",
 	inductiveValue	: 30,
 	logicalValue	: 30,
-	abstractValue	: 30	 
+	abstractValue	: 30,
+	imageLink: 'img/mechanic.jpg',
+	description: "Description of career here"	 
 };
 
 var putech = {
 	careerName		: "Power Utility Tech",
 	inductiveValue	: 32,
 	logicalValue	: 55,
-	abstractValue	: 12	 
+	abstractValue	: 12,
+	imageLink: 'img/putech.jpg',
+	description: "Description of career here"	 
 };
 
 var mason = {
 	careerName		: "Mason",
 	inductiveValue	: 27,
 	logicalValue	: 11,
-	abstractValue	: 36	 
+	abstractValue	: 36,
+	imageLink: 'img/mason.jpg',
+	description: "Description of career here"	 
 };
 
 var carpenter = {
 	careerName		: "Carpenter",
 	inductiveValue	: 10,
 	logicalValue	: 10,
-	abstractValue	: 10	 
+	abstractValue	: 10,
+	imageLink: 'img/carpenter.jpg',
+	description: "Description of career here"	 
 };
 
 var construction = {
 	careerName		: "Construction Worker",
 	inductiveValue	: 22,
 	logicalValue	: 11,
-	abstractValue	: 51	 
+	abstractValue	: 51,
+	imageLink: 'img/construction.jpg',
+	description: "Description of career here"	 
 };
 
 var nurse = { 
 	careerName		: "Nurse",
-	inductiveValue	: 71,
-	logicalValue	: 62,
-	abstractValue	: 21	 
+	inductiveValue	: 40,
+	logicalValue	: 20,
+	abstractValue	: 20,
+	imageLink: 'img/nurse.jpg',
+	description: "Description of career here"	 
 };
 
 var electrician = {
 	careerName		: "Electrician",
-	inductiveValue	: 60,
-	logicalValue	: 85,
-	abstractValue	: 41	 
+	inductiveValue	: 10,
+	logicalValue	: 30,
+	abstractValue	: 10,
+	imageLink: 'img/electrician.jpg',
+	description: "Description of career here"	 
 };
-
 var careerList = [mechanic, putech, mason, carpenter, construction, nurse, electrician];
 
