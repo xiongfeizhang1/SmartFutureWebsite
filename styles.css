@@ -141,6 +141,7 @@ p {
 }
 
 .row{
+	
 	padding-top: 140px;
 	padding-bottom: 40px;
 	padding-right:200px;
@@ -215,7 +216,9 @@ input[type="radio"]{
 #resultsCareer{
 	font-size: 50px;
 }
-
+#listQuestions{
+	padding-left: 100px;
+}
 .redirect{
 	text-decoration:none;
 	list-style-type: none;
