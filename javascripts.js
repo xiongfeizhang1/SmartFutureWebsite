@@ -457,9 +457,10 @@ function setCookie(cname, cvalue, exdays) {
 	return "";
   }
 function checkCookie() {
-	var career = getCookie(career);
-	if (career != " ") {
-	 alert("You have no saved career results!");
+	var career = getCookie("career");
+
+	if (career == ""){
+	 alert("You have no saved career");
 	} else {
 		//display career info
 		var savedCareer = getCookie("career");
@@ -468,7 +469,6 @@ function checkCookie() {
 
 
 		//display career info
-
 		document.getElementById("resultsTitle").innerHTML = "You seem fit to become a : ";
 		document.getElementById("resultsCareer").innerHTML = this[savedCareer].careerName;
 		document.getElementsByClassName("quizButtons")[0].style.visibility = 'hidden';
