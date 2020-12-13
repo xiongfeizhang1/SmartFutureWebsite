@@ -230,3 +230,8 @@ input[type="radio"]{
 	padding: 7px;
 	border-color: rgba(255,255,255,0.1);
 }
+/*google maps css*/
+#map {
+	height: 500px;
+	width: 100%;
+}
