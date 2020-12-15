@@ -41,20 +41,36 @@
 			<!-- classes to divide text into rows and columns -->
 			<div class= "row">
 
-				<h1>
-					
-				</h1>
-			<div id="map">  </div>
-			</div>
-			<script
-    			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-itltkr7ZD1nAlBtR-yjvzEs20iJIFgA&libraries=places&callback=initAutocomplete">
-			</script>
+				<h2>
+					Please select a career to view more information about it
+				</h2>
 
 
+				<select name="careers" id="careers">
+					<option value="mechanic">Mechanic</option>
+					<option value="putech">Power Utility Tech</option>
+					<option value="mason">Mason</option>
+					<option value="photographer">Photographer</option>
+					<option value="teacher">Teacher</option>
+					<option value="nurse">Nurse</option>
+					<option value="electrician">Electrician</option>
+				  </select>
+				  <br><br>
+				  <button onclick="viewCareers()">Submit</button> 
+
+				  <div>
+					<h2 id = "resultsTitle2">
+
+					</h2>
+					<h2 id = "resultsCareer2">
+					</h2>
+					<img name = "careerImage2" width="500">
+					<p id = "careerDescription2">
+
+					</p>
+				</div>
 		</main>
 		<!-- info about the author in the footer -->
- 		<footer>
-			<p id="footer" ></p>
-		</footer> 
+
 	</body>
 </html>

@@ -434,13 +434,14 @@ var electrician = {
 };
 var careerList = [mechanic, putech, mason, photographer, teacher, nurse, electrician];
 
-
+//set cookie's name, value and expiration date
 function setCookie(cname, cvalue, exdays) {
 	var d = new Date();
 	d.setTime(d.getTime() + (exdays*24*60*60*1000));
 	var expires = "expires="+ d.toUTCString();
 	document.cookie = cname + "=" + cvalue + ";" + "samesite=Lax; " + expires + ";path=/";
   }
+  //get the value of the name of the cookie inputted
   function getCookie(cname) {
 	var name = cname + "=";
 	var decodedCookie = decodeURIComponent(document.cookie);
@@ -456,6 +457,8 @@ function setCookie(cname, cvalue, exdays) {
 	}
 	return "";
   }
+
+  //function that checks if user has cookies from previous sessions
 function checkCookie() {
 	var career = getCookie("career");
 
@@ -478,15 +481,26 @@ function checkCookie() {
 
 	  }
   }
-  
-	/*
-  //when the assessment page loads checks for saved cookies
-  if (window.location.href.match('assessment.html')){
-	var hasCookies = checkCookie();
-	if(hasCookies = true)
-	
-	{
 
-	}
+function viewCareers(){
+	var displayResults = document.getElementById("careers").value;
+
+	document.getElementById("resultsCareer2").innerHTML = this[displayResults].careerName;
+	document.getElementById("careerDescription2").innerHTML = this[displayResults].description;
+	document.careerImage2.src= this[displayResults].imageLink;
+
 }
-*/
+
+$(function(){
+	$.cookit({
+		messageText: "Our site uses cookies to enhance your browsing experience.",
+		buttonText: "I accept",
+		backgroundColor: '#0b63a2',
+		messageColor: '#fbfbfb',
+		linkColor: '#afeff6',
+		buttonColor: '#fbfbfb'
+	  });
+
+
+});
+

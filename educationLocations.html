@@ -40,13 +40,17 @@
 		<main>
 			<!-- classes to divide text into rows and columns -->
 			<div class= "row">
-                <h1>Please enter your ZIP code</h1>
-                <input id="zipcode"  placeholder="Enter your 7 digit ZIP code">
+                <h1>Please enter your 7 digit ZIP code</h1>
+                <input id="zipcode"  placeholder="ZIP code">
 			</div>
+
+			<div id="map">  </div>
+			
+			<script
+    			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-itltkr7ZD1nAlBtR-yjvzEs20iJIFgA&libraries=places&callback=initAutocomplete">
+			</script>
 		</main>
 		<!-- info about the author in the footer -->
- 		<footer>
-			<p id="footer" ></p>
-		</footer> 
+
 	</body>
 </html>
