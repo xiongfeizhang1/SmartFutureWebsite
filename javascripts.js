@@ -290,9 +290,9 @@ Sensory Abilities influence visual, auditory and speech perception.
 var mechanic = {
 	career			: "mechanic",
 	careerName		: "Mechanic",
-	cognitiveValue	: 25,
-	physicalValue	: 40,
-	psychomotorValue: 20,
+	cognitiveValue	: 20,
+	physicalValue	: 100,
+	psychomotorValue: 30,
 	sensoryValue	: 30,
 	imageLink: 'img/mechanic.jpg',
 	description: " Mechanics are professionals known for inspecting, repairing, and performing high level maintenance on machines and vehicles. Mechanics often practice problem solving skills, working in teams, and thrive in environments with good communication."	 
@@ -301,10 +301,10 @@ var mechanic = {
 var putech = {
 	career			: "putech",
 	careerName		: "Power Utility Tech",
-	cognitiveValue	: 25,
-	physicalValue	: 40,
-	psychomotorValue: 20,
-	sensoryValue	: 30,
+	cognitiveValue	: 50,
+	physicalValue	: 30,
+	psychomotorValue: 30,
+	sensoryValue	: 10,
 	imageLink: 'img/putech.jpg',
 	description: "Power Utility technicians monitor energy output for utility companies. Their tasks vary from regulating energy distribution and operating power equipment to measuring power flow. Utility Technicians practice critical thinking and working in small groups while traveling to different locations of the city daily."	 
 };
@@ -312,8 +312,8 @@ var putech = {
 var mason = {
 	career			: "mason",
 	careerName		: "Mason",
-	cognitiveValue	: 25,
-	physicalValue	: 40,
+	cognitiveValue	: 15,
+	physicalValue	: 60,
 	psychomotorValue: 20,
 	sensoryValue	: 30,
 	imageLink: 'img/mason.jpg',
@@ -323,21 +323,21 @@ var mason = {
 var photographer = {
 	career			: "photographer",
 	careerName		: "Photographer",
-	cognitiveValue	: 25,
-	physicalValue	: 40,
+	cognitiveValue	: 45,
+	physicalValue	: 10,
 	psychomotorValue: 20,
-	sensoryValue	: 30,
+	sensoryValue	: 80,
 	imageLink: 'img/photographer.jpg',
 	description: "Photographers are often free lance workers hired by contractors to take professional photos of various events, from sports, to celebrations. They can also  creating their own art through photography"
 };
 
 var teacher = {
-	career			: "nurse",
+	career			: "teacher",
 	careerName		: "Teacher",
-	cognitiveValue	: 25,
-	physicalValue	: 40,
-	psychomotorValue: 20,
-	sensoryValue	: 30,
+	cognitiveValue	: 75,
+	physicalValue	: 30,
+	psychomotorValue: 30,
+	sensoryValue	: 50,
 	imageLink: 'img/teacher.jpg',
 	description: "Teachers are leaders who specialize in communicating hard topics to students in an easy to understand way by using examples. They must also be good listeners to understand the problems or requests students might have."	 
 };
@@ -345,10 +345,10 @@ var teacher = {
 var nurse = {
 	career			: "nurse", 
 	careerName		: "Nurse",
-	cognitiveValue	: 25,
+	cognitiveValue	: 65,
 	physicalValue	: 40,
-	psychomotorValue: 20,
-	sensoryValue	: 30,
+	psychomotorValue: 60,
+	sensoryValue	: 60,
 	imageLink: 'img/nurse.jpg',
 	description: "Nurses oversee doctors by assisting them and the patients that are hospitalized. They must have great communication skills while also being able to follow required protocol."	 
 };
@@ -356,10 +356,10 @@ var nurse = {
 var electrician = {
 	career			: "electrician",
 	careerName		: "Electrician",
-	cognitiveValue	: 25,
-	physicalValue	: 40,
-	psychomotorValue: 20,
-	sensoryValue	: 30,
+	cognitiveValue	: 35,
+	physicalValue	: 20,
+	psychomotorValue: 70,
+	sensoryValue	: 40,
 	imageLink: 'img/electrician.jpg',
 	description: "Electricians oversee installing, and maintaining, and repairing electrical wiring, any equipment, and fixtures. They are great problem solvers by by using the many skills they have to create new solutions based on their current location."	 
 };
@@ -435,3 +435,12 @@ $(function(){
 
 });
 
+//map info
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: 35.787743, lng: -78.644257},
+  zoom: 15,
+  mapId: '4c45ae6291c3df1f'
+  });
+}
