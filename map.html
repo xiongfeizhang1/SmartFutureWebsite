@@ -17,49 +17,41 @@
 <script src="javascripts.js"></script> 
   </head>
   <body>
-		<!-- trapezoid class for the css background -->
-		<div class="trapezoid"></div>
-		<nav>
-			<!-- uses the logo id to create the logo on the top left of the page -->
-			<h1 id="logo">SmartFuture</h1>
-			<ul>
-				<!-- menu icon from fontawesome website  -->
-				<li><a href="#"><i class="fas fa-bars"></i></a>
-					<!-- unordered list of links to pages -->
-					<ul>
-						<!-- links to each page of the website -->
-						<li><a href="index.html">Home</a></li>
-                        <li><a href="assessment.html">Assessment</a></li>
-						<li><a href="careers.html">Career Information</a></li>
-						<li><a href="map.html">Education Location</a></li>
-						<li><a href="contact.html">About</a></li>
-					</ul>
-				</li>
-			</ul>
-		</nav>
-		<main>
-			<!-- classes to divide text into rows and columns -->
-			<div class= "row">
+    <!-- trapezoid class for the css background -->
+    <div class="trapezoid"></div>
+    <nav>
+        <!-- uses the logo id to create the logo on the top left of the page -->
+        <h1 id="logo">SmartFuture</h1>
+        <ul>
+            <!-- menu icon from fontawesome website  -->
+            <li><a href="#"><i class="fas fa-bars"></i></a>
+                <!-- unordered list of links to pages -->
+                <ul>
+                    <!-- links to each page of the website -->
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="assessment.html">Assessment</a></li>
+                    <li><a href="careers.html">Career Information</a></li>
+                    <li><a href="map.html">Education Location</a></li>
+                    <li><a href="contact.html">About</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <!-- classes to divide text into rows and columns -->
+        <div class= "row">
 
-        <h1>
-          Find education locations near you!
-        </h1>
-                <!-- classes to divide text into rows and columns -->
-                <div class= "row"></div>
+            <h1>View Education Areas Near You!</h1>
+            <!-- classes to divide text into rows and columns -->
         
-                <div id="map"></div>
-                
-                <script>
+            <h2>Please accept location services before viewing map.</h2>
+            <button class ="quizButtons" onclick="getLocation()">Prompt Location Services</button> 
+            <br>
+            <button class ="quizButtons" onclick="loadMap()">View Map</button> 
 
-                </script>
-                <script
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB604_xxE84DVVlxyO04osGIR5DwD_bvBc&map_ids=4c45ae6291c3df1f&callback=initMap">
-                </script>
-        
+        </div>
+    </main>
+    <!-- info about the author in the footer -->
 
-			</div>
-		</main>
-		<!-- info about the author in the footer -->
- 
-	</body>
+</body>
 </html>

@@ -831,10 +831,51 @@ if (window.location.href.match('index.html')){
 
 //map info
 var map;
+
+
+function getLocation() {
+	if (navigator.geolocation) {
+	  navigator.geolocation.getCurrentPosition(showPosition);
+	} else { 
+	  x.innerHTML = "Geolocation is not supported by this browser.";
+	}
+  }
+
+  function showPosition(position) {
+	latitude = position.coords.latitude;
+	longitude = position.coords.longitude;
+
+	lat = latitude.toString();
+	long = longitude.toString();
+	setCookie("longitude", long, 10);
+	setCookie("latitude", lat, 10);
+	alert("Location Accepted");
+  }
+
+  function accept(){
+	getLocation();
+  }
+function loadMap(){
+
+	window.location.pathname = '/mapDisplay.html';
+}
+
+  
+
+var map;
+var gLat = 35.227085;
+var gLong = -80.843124;
+
+var stringLong = getCookie("longitude");
+var stringLat = getCookie("latitude");
+gLat = parseInt(stringLat);
+gLong = parseInt(stringLong);
+
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-  center: {lat: 35.787743, lng: -78.644257},
-  zoom: 15,
+  center: {lat: gLat, lng: gLong},
+  zoom: 13,
   mapId: '4c45ae6291c3df1f'
   });
 }
