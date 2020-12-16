@@ -1,9 +1,3 @@
-
-
-
-
-
-
 var careerResult;
 var cognitiveValue = 0;
 var physicalValue = 0;
@@ -813,6 +807,8 @@ function viewCareers(){
 	document.careerImage2.src= this[displayResults].imageLink;
 
 }
+
+//cookie consent banner
 if (window.location.href.match('index.html')){
 	$(function(){
 		$.cookit({
@@ -832,7 +828,7 @@ if (window.location.href.match('index.html')){
 //map info
 var map;
 
-
+//functions to retrieve longitude and latitude of user and store in cookies
 function getLocation() {
 	if (navigator.geolocation) {
 	  navigator.geolocation.getCurrentPosition(showPosition);
@@ -866,12 +862,23 @@ var map;
 var gLat = 35.227085;
 var gLong = -80.843124;
 
-var stringLong = getCookie("longitude");
-var stringLat = getCookie("latitude");
-gLat = parseInt(stringLat);
-gLong = parseInt(stringLong);
+//checks user location in cookies when page loads, otherwise loads center of Charlotte
+
+if(window.location.href.match('mapDisplay.html'))
+{
+	if(getCookie("longitude" == ""))
+	{
+	}
+	else{
+		var stringLong = getCookie("longitude");
+		var stringLat = getCookie("latitude");
+		gLat = parseInt(stringLat);
+		gLong = parseInt(stringLong);
+	}
+}
 
 
+//google maps api function
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
   center: {lat: gLat, lng: gLong},
