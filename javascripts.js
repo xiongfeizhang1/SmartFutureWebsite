@@ -9,7 +9,8 @@ var cognitiveValue = 0;
 var physicalValue = 0;
 var psychomotorValue = 0;
 var sensoryValue = 0;
-
+var top3Careers = [];
+var counter = 0;
 
 function addCognitive( amount)
 {
@@ -212,21 +213,56 @@ function grade(){
 	//finds best career
 	var bestCareer = calculateBestCareer(cognitiveValue, physicalValue, psychomotorValue, sensoryValue);
 	
+
+	calcTop3(bestCareer);
+
+
+
+
 	//hides questions 
 	document.getElementById("listQuestions").style.display = "none";
-
-
+	document.getElementsByClassName("quizButtons")[0].style.visibility = 'hidden';
+	//displays industry
+	document.getElementById("industryTitle").innerHTML = "The industry that fits you most: ";
+	document.getElementById("industry").innerHTML = top3Careers[1].industry;
+	
 	//display career info
 
-	document.getElementById("resultsTitle").innerHTML = "You seem fit to become a : ";
-	document.getElementById("resultsCareer").innerHTML = bestCareer.careerName;
-	document.getElementsByClassName("quizButtons")[0].style.visibility = 'hidden';
-	document.getElementById("careerDescription").innerHTML = bestCareer.description;
-	document.careerImage.src= bestCareer.imageLink;
+	document.getElementById("resultsTitle1").innerHTML = "";
+	document.getElementById("resultsCareer1").innerHTML = top3Careers[0].careerName;
+	document.getElementById("careerDescription1").innerHTML = top3Careers[0].description;
+	document.careerImage1.src= top3Careers[0].imageLink;
+
+	document.getElementById("resultsTitle2").innerHTML = "";
+	document.getElementById("resultsCareer2").innerHTML = top3Careers[1].careerName;
+	document.getElementById("careerDescription2").innerHTML = top3Careers[1].description;
+	document.careerImage2.src= top3Careers[1].imageLink;
+
+	document.getElementById("resultsTitle3").innerHTML = "";
+	document.getElementById("resultsCareer3").innerHTML = top3Careers[2].careerName;
+	document.getElementById("careerDescription3").innerHTML = top3Careers[2].description;
+	document.careerImage3.src= top3Careers[2].imageLink;
+
 
 	//saves result career to cookies
 	setCookie("career", bestCareer.career, 10);
 
+}
+
+function calcTop3(bestCareer)
+{
+	
+	for( var i = 0; i < careerList.length; i++)
+	{
+
+		if(bestCareer.industry = careerList[i].industry && counter < 3)
+		{
+			
+			top3Careers[counter] = careerList[i];
+
+			counter++;
+		}
+	}
 }
 
 /*
@@ -278,7 +314,7 @@ function redirectTest(){
 
 var school_counselor = {
 	industry		: "Education",
-    career            : "school counselor", 
+    career            : "school_counselor", 
     careerName        : "School Counselor",
     cognitiveValue    : 25,
     physicalValue    : 40,
@@ -302,7 +338,7 @@ var teacher_assistant = {
  
 var music_director = {
 	industry		: "Education",
-    career            : "music director", 
+    career            : "music_director", 
     careerName        : "Music Director",
     cognitiveValue    : 25,
     physicalValue    : 40,
@@ -314,7 +350,7 @@ var music_director = {
  
 var advert_acct_exec = {
 	industry		: "Entertainment, Media & Sports",
-    career            : "advertising account executive", 
+    career            : "advert_acct_exec", 
     careerName        : "Advertising Account Executive",
     cognitiveValue    : 25,
     physicalValue    : 40,
@@ -326,7 +362,7 @@ var advert_acct_exec = {
  
 var assistant_director = {
 	industry		: "Entertainment, Media & Sports",
-    career            : "assistant director", 
+    career            : "assistant_director", 
     careerName        : "Assistant Director",
     cognitiveValue    : 25,
     physicalValue    : 40,
@@ -338,7 +374,7 @@ var assistant_director = {
  
 var audio_engineer = {
 	industry		: "Entertainment, Media & Sports",
-    career            : "audio engineer", 
+    career            : "audio_engineer", 
     careerName        : "Audio Engineer",
     cognitiveValue    : 25,
     physicalValue    : 40,
@@ -362,7 +398,7 @@ var architect = {
  
 var art_director = {
 	industry		: "Architecture, Art & Design",
-    career            : "art director", 
+    career            : "art_director", 
     careerName        : "Art Director",
     cognitiveValue    : 25,
     physicalValue    : 40,
@@ -374,7 +410,7 @@ var art_director = {
  
 var film_editor = {
 	industry		: "Architecture, Art & Design",
-    career            : "film editor", 
+    career            : "film_editor", 
     careerName        : "Film Editor",
     cognitiveValue    : 25,
     physicalValue    : 40,
@@ -386,7 +422,7 @@ var film_editor = {
  
 var ai_engineer = {
 	industry		: "Computer & Information Technology",
-    career            : "ai engineer", 
+    career            : "ai_engineer", 
     careerName        : "AI Engineer",
     cognitiveValue    : 25,
     physicalValue    : 40,
@@ -398,7 +434,7 @@ var ai_engineer = {
  
 var back_end_dev = {
 	industry		: "Computer & Information Technology",
-    career            : "back end developer", 
+    career            : "back_end_dev", 
     careerName        : "Back End Developer",
     cognitiveValue    : 25,
     physicalValue    : 40,
@@ -410,19 +446,19 @@ var back_end_dev = {
  
 var cloud_engineer = {
 	industry		: "Computer & Information Technology",
-    career            : "cloud engineer", 
+    career            : "cloud_engineer", 
     careerName        : "Cloud Engineer",
     cognitiveValue    : 25,
     physicalValue    : 40,
     psychomotorValue: 20,
     sensoryValue    : 30,
-    imageLink: 'img/cloudengineer_gladeo_feed.jpg',
+    imageLink: 'img/cloudengineer_gladeo_feed.png',
     description: "Few things have shaken up the traditional IT world as much as cloud computing. Instead of companies and organizations relying on internal networks, they can simply use private computer resources accessed over the Internet. This saves them time and money, which is why ~94% of enterprises have already adopted it to some degree. Cloud Engineers manage cloud-based systems created by architects, whom they may collaborate with to identify external customer needs and offer improvement ideas or solutions to problems."     
 };
  
 var biomed_engineer = {
 	industry		: "Engineering",
-    career            : "biomedical engineer", 
+    career            : "biomed_engineer", 
     careerName        : "Biomedical Engineer",
     cognitiveValue    : 25,
     physicalValue    : 40,
@@ -434,7 +470,7 @@ var biomed_engineer = {
  
 var civil_engineer = {
 	industry		: "Engineering",
-    career            : "civil engineer", 
+    career            : "civil_engineer", 
     careerName        : "Civil Engineer",
     cognitiveValue    : 25,
     physicalValue    : 40,
@@ -446,7 +482,7 @@ var civil_engineer = {
  
 var electrical_engineer = {
 	industry		: "Engineering",
-    career            : "electrical engineer", 
+    career            : "electrical_engineer", 
     careerName        : "Electrical Engineer",
     cognitiveValue    : 25,
     physicalValue    : 40,
@@ -457,7 +493,7 @@ var electrical_engineer = {
 };
 var business_affairs = {
 	industry		: "Legal",
-    career            : "business affairs in entertainment", 
+    career            : "business_affairs", 
     careerName        : "Business Affairs In Entertainment",
     cognitiveValue    : 25,
     physicalValue    : 40,
@@ -469,20 +505,20 @@ var business_affairs = {
  
 var legal_assistant = {
 	industry		: "Legal",
-    career            : "legal assistant", 
+    career            : "legal_assistant", 
     careerName        : "Legal Assistant",
     cognitiveValue    : 25,
     physicalValue    : 40,
     psychomotorValue: 20,
     sensoryValue    : 30,
-    imageLink: 'img/director20of20business20affairs_gladeo_feed.jpg',
+    imageLink: 'img/legal.jpg',
     description: "A paralegal often works in a legal office to support the lawyer team. Their role is supportive. Paralegals do much of the legwork in preparing the important documents a lawyer might need. They often need to research law and support the lawyer’s role in at a trial, hearing, or meeting. This involves meeting with the lawyer to determine the best way to approach a client’s needs. The paralegal will then research laws and precedent (similar cases and their decisions) for the lawyer."     
 };
  
 var patent_attorney = {
 	industry		: "Legal",
-    career            : "school counselor", 
-    careerName        : "School Counselor",
+    career            : "patent_attorney", 
+    careerName        : "Patent Attorney",
     cognitiveValue    : 25,
     physicalValue    : 40,
     psychomotorValue: 20,
@@ -501,7 +537,7 @@ var social_worker = {
     psychomotorValue: 20,
     sensoryValue    : 30,
     imageLink: 'img/socialworker.jpg',
-    description: ""     
+    description: "Social workers assists people within a wide range of settings, from mental health clinics to schools and hospitals. they can work with individuals or within large communities or organizations and assist with a variety of ailments from addiction treatment to chronic illness and child support services"     
 };
 var sanitation = {
 	industry		: "Community & Social Service",
@@ -645,7 +681,7 @@ var mason = {
     physicalValue    : 40,
     psychomotorValue: 20,
     sensoryValue    : 30,
-    imageLink: 'img/.jpg',
+    imageLink: 'img/mason.jpg',
     description: "A mason uses bricks, concrete blocks, or natural stones to build structures that include walls, walkways, fences, and chimneys. Depending on the building material in which they specialize, these workers might be called brick masons, block masons, or stonemasons."     
 };
 
@@ -710,8 +746,7 @@ var epidemiologist = {
 
 
 
-var careerList = [mechanic, putech, mason, photographer, teacher, nurse, electrician];
-
+var careerList = [school_counselor, teacher_assistant, music_director, advert_acct_exec, assistant_director, audio_engineer, architect, art_director, film_editor, ai_engineer, back_end_dev, cloud_engineer, biomed_engineer, civil_engineer, electrical_engineer, business_affairs, legal_assistant, patent_attorney, social_worker, sanitation, therapist, campaign_manager, legislative_aide, political_media_strategist, ux_designer, information_technology, software_developer, hr_specialist, project_manager, social_media_specialist, mason, carpenter, electrician, pharmacist, dentist, epidemiologist];
 //set cookie's name, value and expiration date
 function setCookie(cname, cvalue, exdays) {
 	var d = new Date();
@@ -748,13 +783,23 @@ function checkCookie() {
 		//hides questions 
 		document.getElementById("listQuestions").style.display = "none";
 
+		calcTop3(savedCareer);
 
 		//display career info
-		document.getElementById("resultsTitle").innerHTML = "You seem fit to become a : ";
-		document.getElementById("resultsCareer").innerHTML = this[savedCareer].careerName;
-		document.getElementsByClassName("quizButtons")[0].style.visibility = 'hidden';
-		document.getElementById("careerDescription").innerHTML = this[savedCareer].description;
-		document.careerImage.src= this[savedCareer].imageLink;
+		document.getElementById("resultsTitle1").innerHTML = "";
+		document.getElementById("resultsCareer1").innerHTML = top3Careers[0].careerName;
+		document.getElementById("careerDescription1").innerHTML = top3Careers[0].description;
+		document.careerImage1.src= top3Careers[0].imageLink;
+	
+		document.getElementById("resultsTitle2").innerHTML = "";
+		document.getElementById("resultsCareer2").innerHTML = top3Careers[1].careerName;
+		document.getElementById("careerDescription2").innerHTML = top3Careers[1].description;
+		document.careerImage2.src= top3Careers[1].imageLink;
+	
+		document.getElementById("resultsTitle3").innerHTML = "";
+		document.getElementById("resultsCareer3").innerHTML = top3Careers[2].careerName;
+		document.getElementById("careerDescription3").innerHTML = top3Careers[2].description;
+		document.careerImage3.src= top3Careers[2].imageLink;
 
 
 	  }
@@ -768,19 +813,21 @@ function viewCareers(){
 	document.careerImage2.src= this[displayResults].imageLink;
 
 }
+if (window.location.href.match('index.html')){
+	$(function(){
+		$.cookit({
+			messageText: "Our site uses cookies to enhance your browsing experience.",
+			buttonText: "I accept",
+			backgroundColor: '#0b63a2',
+			messageColor: '#fbfbfb',
+			linkColor: '#afeff6',
+			buttonColor: '#fbfbfb'
+		  });
+	
+	
+	});
+}
 
-$(function(){
-	$.cookit({
-		messageText: "Our site uses cookies to enhance your browsing experience.",
-		buttonText: "I accept",
-		backgroundColor: '#0b63a2',
-		messageColor: '#fbfbfb',
-		linkColor: '#afeff6',
-		buttonColor: '#fbfbfb'
-	  });
-
-
-});
 
 //map info
 var map;
