@@ -53,7 +53,7 @@ function grade(){
 	grade14();
 	grade15();
 
-	alert("\ncog: "+ cognitiveValue + "\nphys" + physicalValue + "\npsych" + psychomotorValue + "\nSens" + sensoryValue);
+	//alert("\ncog: "+ cognitiveValue + "\nphys" + physicalValue + "\npsych" + psychomotorValue + "\nSens" + sensoryValue);
 
 
 	
@@ -155,7 +155,7 @@ function calculateBestCareer(cognitiveV, physicalV, psychomotorV, sensoryV ){
 		}
 	}
 	
-	alert(bestCareer.industry);
+	//alert(bestCareer.industry);
 
 	cognitiveDifference = 0;
 	physicalDifference = 0;
@@ -306,21 +306,22 @@ var gLat = 35.227085;
 var gLong = -80.843124;
 
 //checks user location in cookies when page loads, otherwise loads center of Charlotte
-
+/*
 if(window.location.href.match('mapDisplay.html'))
 {
-	if(getCookie("longitude" == ""))
-	{
-	}
-	else{
-		var stringLong = getCookie("longitude");
-		var stringLat = getCookie("latitude");
-		gLat = parseInt(stringLat);
-		gLong = parseInt(stringLong);
-	}
+
 }
+*/
 
-
+if(getCookie("longitude" == ""))
+{
+}
+else{
+	var stringLong = getCookie("longitude");
+	var stringLat = getCookie("latitude");
+	gLat = parseInt(stringLat);
+	gLong = parseInt(stringLong);
+}
 //google maps api function
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
