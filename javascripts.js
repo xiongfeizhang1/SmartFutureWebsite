@@ -319,14 +319,14 @@ if(getCookie("longitude" == ""))
 else{
 	var stringLong = getCookie("longitude");
 	var stringLat = getCookie("latitude");
-	gLat = parseInt(stringLat);
-	gLong = parseInt(stringLong);
+	gLat = parseFloat(stringLat);
+	gLong = parseFloat(stringLong);
 }
 //google maps api function
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
   center: {lat: gLat, lng: gLong},
-  zoom: 13,
+  zoom: 15,
   mapId: '4c45ae6291c3df1f'
   });
 }
