@@ -97,8 +97,11 @@ function grade(){
 function calcTop3(bestCareer)
 {
 	
+	
 	for( var i = 0; i < careerList.length; i++)
 	{
+
+		
 
 		if(bestCareer.industry == careerList[i].industry && counter < 3)
 		{
@@ -107,6 +110,8 @@ function calcTop3(bestCareer)
 			counter++;
 		}
 	}
+
+	counter = 0;
 }
 
 function calculateBestCareer(cognitiveV, physicalV, psychomotorV, sensoryV ){
@@ -150,7 +155,7 @@ function calculateBestCareer(cognitiveV, physicalV, psychomotorV, sensoryV ){
 		}
 	}
 	
-	alert(bestCareer.careerName);
+	alert(bestCareer.industry);
 
 	cognitiveDifference = 0;
 	physicalDifference = 0;
@@ -210,8 +215,13 @@ function checkCookie() {
 		//hides questions 
 		document.getElementById("listQuestions").style.display = "none";
 
-		calcTop3(savedCareer);
 
+		calcTop3(eval(savedCareer));
+
+			//displays industry
+		document.getElementById("industryTitle").innerHTML = "The industry that fits you most: ";
+		document.getElementById("industry").innerHTML = top3Careers[1].industry;
+	
 		//display career info
 		document.getElementById("resultsTitle1").innerHTML = "";
 		document.getElementById("resultsCareer1").innerHTML = top3Careers[0].careerName;
